@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:shyamexe/utils/layout_helper.dart';
 
+import '../../../widgets/hover_button.dart';
 import 'name_banner_text.dart';
 import 'user_avatar.dart';
 
@@ -13,7 +14,7 @@ class NameBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return size.width > 600
+    return LayOutHelper.masterDataCards(context) != 1
         ? Center(
             child: SizedBox(
               width: 500,
@@ -33,20 +34,27 @@ class NameBanner extends StatelessWidget {
             ),
           )
         : Align(
-          alignment: Alignment.bottomLeft,
-          child: Padding(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
               padding: const EdgeInsets.only(left: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  UserAvatar(),
-                  SizedBox(
+                children: [
+                  const UserAvatar(),
+                  const SizedBox(
                     height: 30,
                   ),
-                  NameBannerText()
+                  const NameBannerText(),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  HoverTextButton(
+                    title: 'About',
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),
-        );
+          );
   }
 }
