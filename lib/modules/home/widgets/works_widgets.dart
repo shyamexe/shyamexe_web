@@ -46,7 +46,7 @@ class WorksWidgets extends StatelessWidget {
           title: 'weather app',
           tags: const ['android', 'ios',],
           gradientColors: const [
-            Color(0xff78ffd6),
+            Color(0xff33aeaa),
             Color(0xff007991),
           ],
           tagBackGround: const Color(0xff445494),
