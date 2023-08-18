@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shyamexe/utils/layout_helper.dart';
 
 import '../../../widgets/hover_button.dart';
+import '../../about/about.dart';
 import 'name_banner_text.dart';
 import 'user_avatar.dart';
 
@@ -48,9 +49,16 @@ class NameBanner extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  HoverTextButton(
-                    title: 'About',
-                    onTap: () {},
+                  SizedBox(width: 100,
+
+                    child: HoverTextButton(
+                      
+                      title: 'About',
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushReplacementNamed(About.routeName);
+                      },
+                    ),
                   ),
                 ],
               ),

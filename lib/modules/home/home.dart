@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:universal_html/html.dart' as html;
 import '../../utils/custom_scroll_behavior.dart';
@@ -35,13 +36,26 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const WorksWidgets(),
+                const Center(
+                  child: SizedBox(
+                    width: 1000,
+                    child: WorksWidgets(),
+                  ),
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
                   child: Row(
                     children: [
                       const Spacer(),
+                      Text(
+                        'Say Hi!',
+                        style: GoogleFonts.nunito(
+                          fontSize: 15.0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      const SizedBox(width: 12,),
                       HoverTextButton(
                         title: 'Reach out',
                         onTap: () async {

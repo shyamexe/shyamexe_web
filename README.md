@@ -1,6 +1,8 @@
 # shyamexe
 
-A new Flutter project. https://paupaupau.com/
+A new Flutter project. 
+https://paupaupau.com/
+https://github.com/marketplace/actions/deploy-to-firebase-hosting
 
 ## Getting Started
 
