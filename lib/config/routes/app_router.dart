@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shyamexe/modules/about/about.dart';
 
 import '../../modules/home/home.dart';
 
@@ -10,6 +11,10 @@ class AppRouter {
       case Home.routeName:
         return MaterialPageRoute(
           builder: (_) => const Home(),
+        );
+      case About.routeName:
+        return MaterialPageRoute(
+          builder: (_) => const About(),
         );
       default:
         throw const Scaffold(

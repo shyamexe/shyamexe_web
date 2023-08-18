@@ -116,7 +116,8 @@ class ChildWidget extends StatelessWidget {
           return Container(
               height: LayOutHelper.masterDataCards(context) == 3 ? 450 : 350,
               margin: EdgeInsets.symmetric(
-                  horizontal: LayOutHelper.masterDataCards(context) * 50,
+                  horizontal:
+                      LayOutHelper.masterDataCards(context) == 2 ? 100 : 50,
                   vertical: 25),
               width: double.infinity,
               decoration: BoxDecoration(
@@ -147,16 +148,26 @@ class ChildWidget extends StatelessWidget {
                           width: size.maxWidth,
                           duration: const Duration(milliseconds: 300),
                           transform: transform,
-                          child: SizedBox(
-                            child: DeviceFrame(
-                              device: device,
-                              isFrameVisible: true,
-                              orientation: Orientation.portrait,
-                              screen: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(assetImage),
-                                      fit: BoxFit.fill),
+                          child: Center(
+                            child: Container(
+                              decoration: BoxDecoration(boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(.2),
+                                  blurRadius: 50,
+                                  offset: const Offset(0, 24),
+                                  spreadRadius: 30
+                                )
+                              ]),
+                              child: DeviceFrame(
+                                device: device,
+                                isFrameVisible: true,
+                                orientation: Orientation.portrait,
+                                screen: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(assetImage),
+                                        fit: BoxFit.fill),
+                                  ),
                                 ),
                               ),
                             ),
@@ -187,7 +198,6 @@ class ChildWidget extends StatelessWidget {
                                 style: GoogleFonts.nunito(
                                   fontSize: 30.0,
                                   color: titleColor,
-                                  
                                 ),
                               ),
                               const SizedBox(

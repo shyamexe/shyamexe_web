@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shyamexe/modules/about/about.dart';
+import 'package:shyamexe/modules/home/home.dart';
+import 'package:shyamexe/utils/layout_helper.dart';
+import 'package:shyamexe/widgets/hover_button.dart';
 import 'package:shyamexe/widgets/hover_icon_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../utils/layout_helper.dart';
-import '../../../widgets/hover_button.dart';
-
-class HeaderWidet extends StatelessWidget {
-  const HeaderWidet({
+class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
       child: Row(
         children: [
           if (LayOutHelper.masterDataCards(context) != 1)
             HoverTextButton(
-              title: 'About',
+              title: 'Back to main',
               onTap: () {
-                Navigator.of(context).pushReplacementNamed(About.routeName);
+                Navigator.of(context).pushReplacementNamed(Home.routeName);
               },
             ),
           if (LayOutHelper.masterDataCards(context) != 1) const Spacer(),
