@@ -14,7 +14,11 @@
   -->
   <base href="$FLUTTER_BASE_HREF">
 
-  <add name="X-Frame-Options" value="DENY" />
+  </head><body>  <picture id="splash">
+      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>          <add name="X-Frame-Options" value="DENY">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -48,8 +52,8 @@
     }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
-</head>
-<body>
+
+
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -67,4 +71,4 @@
   </script>
 
 
-</body></html>
+</add></body></html>
