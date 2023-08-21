@@ -22,7 +22,7 @@ class HeaderWidget extends StatelessWidget {
             HoverTextButton(
               title: 'Back to main',
               onTap: () {
-                Navigator.of(context).pushReplacementNamed(Home.routeName);
+                Navigator.pop(context);
               },
             ),
           if (LayOutHelper.masterDataCards(context) != 1) const Spacer(),

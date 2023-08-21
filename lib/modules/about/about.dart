@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:shyamexe/config/constants/strings.dart';
-import 'package:shyamexe/modules/home/home.dart';
 import 'package:shyamexe/utils/layout_helper.dart';
 import 'package:shyamexe/widgets/hover_button.dart';
-import 'package:shyamexe/widgets/hover_icon_button.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/bottom_text_widget.dart';
 import 'widgets/header_widget.dart';
@@ -48,7 +42,7 @@ class About extends StatelessWidget {
               HoverTextButton(
                 title: 'Back to main',
                 onTap: () {
-                  Navigator.of(context).pushReplacementNamed(Home.routeName);
+                  Navigator.pop(context);
                 },
               ),
             const SizedBox(

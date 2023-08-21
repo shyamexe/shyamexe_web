@@ -23,7 +23,7 @@ class HeaderWidet extends StatelessWidget {
             HoverTextButton(
               title: 'About',
               onTap: () {
-                Navigator.of(context).pushReplacementNamed(About.routeName);
+                Navigator.of(context).pushNamed(About.routeName);
               },
             ),
           if (LayOutHelper.masterDataCards(context) != 1) const Spacer(),

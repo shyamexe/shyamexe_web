@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shyamexe/config/constants/strings.dart';
+import 'package:shyamexe/modules/common/url.dart';
 import 'package:shyamexe/widgets/hover_button.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher.dart';
@@ -105,7 +106,7 @@ class BottomTextWidget extends StatelessWidget {
                 useMaxWidth: true,
                 title: 'Download CV',
                 onTap: () {
-                  html.window.open('https://github.com/shyamexe/shyamexe_web/files/12378437/shyamjith-22-4-23.pdf', 'cv');
+                  html.window.open(Url.cv, 'cv');
                 },
               ),
             ),
