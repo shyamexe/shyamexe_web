@@ -13,17 +13,16 @@ class NameBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return LayOutHelper.masterDataCards(context) != 1
-        ? Center(
+        ? const Center(
             child: SizedBox(
               width: 500,
               child: Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
+                  children: [
                     UserAvatar(),
                     SizedBox(
                       width: 40,

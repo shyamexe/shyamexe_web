@@ -15,6 +15,29 @@ class WorksWidgets extends StatelessWidget {
     return Column(
       children: [
         WorkTileWidget(
+          isLapTop: true,
+          onTap: () async {
+            await launchUrl(
+                Uri.parse(
+                  'https://github.com/shyamexe/bricks-cli',
+                ),
+                mode: LaunchMode.externalNonBrowserApplication);
+          },
+          assetImage: 'assets/cli.png',
+          title: 'bricks-cli ',
+          tags: const ['cli'],
+          gradientColors: const [
+            Color(0xffe9f0aa),
+            Color(0xff99aceb),
+          ],
+          tagBackGround: const Color(0xff35518a),
+          tagColor: Colors.white,
+          titleColor: const Color(0xff16041e),
+          device: Devices.macOS.wideMonitor,
+          orientation: Orientation.portrait,
+          discription: 'Streamline Flutter project setup and expansion with Mason Bricks: a collection of reusable templates and generators for efficient code scaffolding',
+        ),
+        WorkTileWidget(
           onTap: () async {
             await launchUrl(
                 Uri.parse(
@@ -34,6 +57,7 @@ class WorksWidgets extends StatelessWidget {
           titleColor: const Color(0xff16041e),
           device: Devices.ios.iPadAir4,
           orientation: Orientation.portrait,
+          discription: 'This Flutter package provides a vertical scrollable tab bar widget that allows you to display resizable tabs',
         ),
         WorkTileWidget(
           onTap: () async {
@@ -55,6 +79,7 @@ class WorksWidgets extends StatelessWidget {
           titleColor: Colors.white,
           device: Devices.ios.iPhone13ProMax,
           orientation: Orientation.portrait,
+          discription: 'A simple dictionary app in flutter using bloc patern',
         ),
         WorkTileWidget(
           onTap: () async {
@@ -77,7 +102,7 @@ class WorksWidgets extends StatelessWidget {
           orientation: Orientation.portrait,
           // device: Devices.android.mediumTablet,
           device: Devices.ios.iPadAir4,
-
+          discription: '',
         ),
         WorkTileWidget(
           onTap: () async {
@@ -102,6 +127,7 @@ class WorksWidgets extends StatelessWidget {
           titleColor: const Color(0xff16041e),
           device: Devices.ios.iPhoneSE,
           orientation: Orientation.portrait,
+          discription: 'This is a simple weather app built with Flutter that displays the current weather for a given location',
         ),
       ],
     );

@@ -30,7 +30,7 @@ class HeaderWidet extends StatelessWidget {
           Text('exe',
               style: GoogleFonts.libreBarcode39(
                 fontSize: 30.0,
-                color: Color(0xfff8edff),
+                color: const Color(0xfff8edff),
               )),
           const Spacer(),
           HoverIconButton(

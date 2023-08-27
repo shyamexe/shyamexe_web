@@ -109,7 +109,7 @@ class ChildWidget extends StatelessWidget {
                       fontSize: 18.0,
                       color: hover
                           ? selectedTextColor ?? Colors.black
-                          : unSelectedTextColor ?? Color(0xfff8edff),
+                          : unSelectedTextColor ?? const Color(0xfff8edff),
                     ),
                   ),
                 ),
