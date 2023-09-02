@@ -42,19 +42,21 @@ class WorkTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (LayOutHelper.masterDataCards(context) == 1) {
-      return VisibilityDetector(
-        key: Key(title),
-        onVisibilityChanged: (visibilityInfo) {
-          debugPrint(
-              'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction} visible');
-          if (visibilityInfo.visibleFraction == 1) {
-            transformNotifier.value = Matrix4.identity()
-              ..translate(0, -40, 0);
-          } else {
-            transformNotifier.value = Matrix4.identity();
-          }
-        },
-        child: ChildWidget(
+      return 
+      // VisibilityDetector(
+      //   key: Key(title),
+      //   onVisibilityChanged: (visibilityInfo) {
+      //     debugPrint(
+      //         'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction} visible');
+      //     if (visibilityInfo.visibleFraction == 1) {
+      //       transformNotifier.value = Matrix4.identity()
+      //         ..translate(0, -40, 0);
+      //     } else {
+      //       transformNotifier.value = Matrix4.identity();
+      //     }
+      //   },
+      //   child:
+         ChildWidget(
           isLapTop: isLapTop ?? false,
           transformNotifier: transformNotifier,
           gradientColors: gradientColors,
@@ -66,7 +68,7 @@ class WorkTileWidget extends StatelessWidget {
           tagBackGround: tagBackGround,
           tagColor: tagColor,
           onTap: onTap,
-        ),
+        // ),
       );
     } else {
       return MouseRegion(
