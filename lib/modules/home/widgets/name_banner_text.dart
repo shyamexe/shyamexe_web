@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NameBannerText extends StatelessWidget {
   const NameBannerText({
@@ -13,11 +12,12 @@ class NameBannerText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Text(
+         const Text(
           'Hi I\'m Shyam Jith',
-          style: GoogleFonts.urbanist(
+          style: TextStyle(
+            fontFamily: 'Nunito',
             fontSize: 33.0,
-            color: const Color(0xfff8edff),
+            color: Color(0xfff8edff),
           ),
         ),
         Row(
@@ -25,11 +25,12 @@ class NameBannerText extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-             Text(
+             const Text(
               'I create ',
-              style: GoogleFonts.urbanist(
+              style: TextStyle(
+                fontFamily: 'Nunito',
                 fontSize: 33.0,
-                color: const Color(0xfff8edff),
+                color: Color(0xfff8edff),
               ),
             ),
             // const SizedBox(
@@ -37,9 +38,10 @@ class NameBannerText extends StatelessWidget {
             // ),
             DefaultTextStyle(
               textAlign: TextAlign.start,
-              style:  GoogleFonts.urbanist(
+              style:  const TextStyle(
+                fontFamily: 'Nunito',
                 fontSize: 33.0,
-                color: const Color(0xfff8edff),
+                color: Color(0xfff8edff),
               ),
               child: AnimatedTextKit(
                 repeatForever: true,

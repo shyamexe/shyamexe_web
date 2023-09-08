@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shyamexe/config/constants/strings.dart';
 
 class WebUpperWidget extends StatelessWidget {
@@ -29,13 +28,14 @@ class WebUpperWidget extends StatelessWidget {
         const SizedBox(
           width: 30,
         ),
-        Expanded(
+        const Expanded(
           child: Text(
             Strings.aboutP1,
             textAlign: TextAlign.start,
-            style: GoogleFonts.caveat(
+            style:TextStyle(
+              fontFamily: 'Nunito',
               fontSize: 20.0,
-              color: const Color(0xfff8edff),
+              color: Color(0xfff8edff),
             ),
           ),
         ),

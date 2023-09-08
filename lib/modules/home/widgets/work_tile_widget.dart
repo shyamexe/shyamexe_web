@@ -1,9 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 import 'package:shyamexe/utils/layout_helper.dart';
 
@@ -18,20 +15,24 @@ class WorkTileWidget extends StatelessWidget {
   final DeviceInfo device;
   final Orientation orientation;
   final void Function()? onTap;
+  final bool? isLapTop;
+  final String discription;
 
-  WorkTileWidget(
-      {Key? key,
-      required this.title,
-      required this.tags,
-      required this.gradientColors,
-      required this.titleColor,
-      required this.tagColor,
-      required this.tagBackGround,
-      required this.assetImage,
-      required this.device,
-      required this.orientation,
-      required this.onTap})
-      : super(key: key);
+  WorkTileWidget({
+    Key? key,
+    required this.discription,
+    required this.title,
+    required this.tags,
+    required this.gradientColors,
+    required this.titleColor,
+    required this.tagColor,
+    required this.tagBackGround,
+    required this.assetImage,
+    required this.device,
+    required this.orientation,
+    required this.onTap,
+    this.isLapTop,
+  }) : super(key: key);
 
   final ValueNotifier<Matrix4> transformNotifier =
       ValueNotifier(Matrix4.identity());
@@ -39,18 +40,22 @@ class WorkTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (LayOutHelper.masterDataCards(context) == 1) {
-      return VisibilityDetector(
-        key: Key(title),
-        onVisibilityChanged: (visibilityInfo) {
-          debugPrint(
-              'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction} visible');
-          if (visibilityInfo.visibleFraction == 1) {
-            transformNotifier.value = Matrix4.identity()..translate(0, -40, 0);
-          } else {
-            transformNotifier.value = Matrix4.identity();
-          }
-        },
-        child: ChildWidget(
+      return 
+      // VisibilityDetector(
+      //   key: Key(title),
+      //   onVisibilityChanged: (visibilityInfo) {
+      //     debugPrint(
+      //         'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction} visible');
+      //     if (visibilityInfo.visibleFraction == 1) {
+      //       transformNotifier.value = Matrix4.identity()
+      //         ..translate(0, -40, 0);
+      //     } else {
+      //       transformNotifier.value = Matrix4.identity();
+      //     }
+      //   },
+      //   child:
+         ChildWidget(
+          isLapTop: isLapTop ?? false,
           transformNotifier: transformNotifier,
           gradientColors: gradientColors,
           device: device,
@@ -61,7 +66,7 @@ class WorkTileWidget extends StatelessWidget {
           tagBackGround: tagBackGround,
           tagColor: tagColor,
           onTap: onTap,
-        ),
+        // ),
       );
     } else {
       return MouseRegion(
@@ -73,6 +78,7 @@ class WorkTileWidget extends StatelessWidget {
           transformNotifier.value = Matrix4.identity();
         },
         child: ChildWidget(
+          isLapTop: isLapTop ?? false,
           transformNotifier: transformNotifier,
           gradientColors: gradientColors,
           device: device,
@@ -92,6 +98,7 @@ class WorkTileWidget extends StatelessWidget {
 class ChildWidget extends StatelessWidget {
   const ChildWidget({
     Key? key,
+    this.isLapTop = false,
     required this.transformNotifier,
     required this.gradientColors,
     required this.device,
@@ -103,7 +110,7 @@ class ChildWidget extends StatelessWidget {
     required this.tagColor,
     this.onTap,
   }) : super(key: key);
-
+  final bool isLapTop;
   final ValueNotifier<Matrix4> transformNotifier;
   final List<Color> gradientColors;
   final DeviceInfo device;
@@ -151,7 +158,9 @@ class ChildWidget extends StatelessWidget {
                     return Stack(
                       children: [
                         Positioned(
-                          top: size.maxHeight / 2,
+                          top: isLapTop
+                              ? size.maxHeight / 4
+                              : size.maxHeight / 2,
                           child: AnimatedContainer(
                             height: size.maxHeight,
                             width: size.maxWidth,
@@ -166,15 +175,18 @@ class ChildWidget extends StatelessWidget {
                                       offset: const Offset(0, 24),
                                       spreadRadius: 30)
                                 ]),
-                                child: DeviceFrame(
-                                  device: device,
-                                  isFrameVisible: true,
-                                  orientation: Orientation.portrait,
-                                  screen: Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(assetImage),
-                                          fit: BoxFit.fill),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: DeviceFrame(
+                                    device: device,
+                                    isFrameVisible: true,
+                                    orientation: Orientation.portrait,
+                                    screen: Container(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(assetImage),
+                                            fit: BoxFit.fill),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -210,7 +222,8 @@ class ChildWidget extends StatelessWidget {
                                   child: Text(
                                     title,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.nunito(
+                                    style: TextStyle(
+                                      fontFamily: 'Nunito',
                                       fontSize: 30.0,
                                       color: titleColor,
                                     ),
@@ -233,8 +246,8 @@ class ChildWidget extends StatelessWidget {
                                           color: tagBackGround),
                                       child: Text(
                                         tags[index],
-                                        style: GoogleFonts.nunito(
-                                          fontSize: 15.0,
+                                        style: TextStyle(
+                                          fontFamily: 'Nunito',
                                           color: tagColor,
                                         ),
                                       ),
