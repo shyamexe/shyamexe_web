@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HoverTextButton extends StatelessWidget {
   final String title;
@@ -105,7 +104,8 @@ class ChildWidget extends StatelessWidget {
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.urbanist(
+                    style: TextStyle(
+                      fontFamily: 'Nunito',
                       fontSize: 18.0,
                       color: hover
                           ? selectedTextColor ?? Colors.black

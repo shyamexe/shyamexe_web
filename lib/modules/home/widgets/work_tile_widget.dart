@@ -1,8 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 import 'package:shyamexe/utils/layout_helper.dart';
 
@@ -224,7 +222,8 @@ class ChildWidget extends StatelessWidget {
                                   child: Text(
                                     title,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.nunito(
+                                    style: TextStyle(
+                                      fontFamily: 'Nunito',
                                       fontSize: 30.0,
                                       color: titleColor,
                                     ),
@@ -247,8 +246,8 @@ class ChildWidget extends StatelessWidget {
                                           color: tagBackGround),
                                       child: Text(
                                         tags[index],
-                                        style: GoogleFonts.nunito(
-                                          fontSize: 15.0,
+                                        style: TextStyle(
+                                          fontFamily: 'Nunito',
                                           color: tagColor,
                                         ),
                                       ),

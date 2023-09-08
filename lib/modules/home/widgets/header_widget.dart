@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shyamexe/modules/about/about.dart';
 import 'package:shyamexe/widgets/hover_icon_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -26,9 +25,7 @@ class HeaderWidet extends StatelessWidget {
                 Navigator.of(context).pushNamed(About.routeName);
               },
             ),
-          if (LayOutHelper.masterDataCards(context) != 1) const Spacer(),
-          Text('',
-            ),
+          
           const Spacer(),
           HoverIconButton(
             gradient: const [

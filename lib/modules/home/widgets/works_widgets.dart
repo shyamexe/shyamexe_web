@@ -25,7 +25,7 @@ class WorksWidgets extends StatelessWidget {
           },
           assetImage: 'assets/cli.png',
           title: 'bricks-cli ',
-          tags: const ['cli'],
+          tags: const ['reusable code blocks'],
           gradientColors: const [
             Color(0xffe9f0aa),
             Color(0xff99aceb),

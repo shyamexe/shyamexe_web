@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shyamexe/config/constants/strings.dart';
 
 class MobileUpperWidget extends StatelessWidget {
@@ -13,12 +12,13 @@ class MobileUpperWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
+        const Text(
           Strings.aboutP1,
           textAlign: TextAlign.center,
-          style: GoogleFonts.caveat(
+          style:TextStyle(
+            fontFamily: 'Nunito',
             fontSize: 20.0,
-            color: const Color(0xfff8edff),
+            color: Color(0xfff8edff),
           ),
         ),
         const SizedBox(
