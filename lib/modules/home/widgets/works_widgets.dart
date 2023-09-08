@@ -15,7 +15,7 @@ class WorksWidgets extends StatelessWidget {
     return Column(
       children: [
         WorkTileWidget(
-          isLapTop: true,
+          isLapTop: false,
           onTap: () async {
             await launchUrl(
                 Uri.parse(
@@ -33,8 +33,8 @@ class WorksWidgets extends StatelessWidget {
           tagBackGround: const Color(0xff35518a),
           tagColor: Colors.white,
           titleColor: const Color(0xff16041e),
-          device: Devices.macOS.wideMonitor,
-          orientation: Orientation.portrait,
+          device: Devices.ios.iPadAir4,
+          orientation: Orientation.landscape,
           discription: 'Streamline Flutter project setup and expansion with Mason Bricks: a collection of reusable templates and generators for efficient code scaffolding',
         ),
         WorkTileWidget(

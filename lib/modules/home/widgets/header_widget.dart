@@ -27,11 +27,8 @@ class HeaderWidet extends StatelessWidget {
               },
             ),
           if (LayOutHelper.masterDataCards(context) != 1) const Spacer(),
-          Text('exe',
-              style: GoogleFonts.libreBarcode39(
-                fontSize: 30.0,
-                color: const Color(0xfff8edff),
-              )),
+          Text('',
+            ),
           const Spacer(),
           HoverIconButton(
             gradient: const [
