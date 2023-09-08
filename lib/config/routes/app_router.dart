@@ -10,7 +10,7 @@ class AppRouter {
     switch (settings.name) {
       case Home.routeName:
         return MaterialPageRoute(
-          builder: (_) => const Home(),
+          builder: (_) =>  Home(),
         );
       case About.routeName:
         return MaterialPageRoute(
