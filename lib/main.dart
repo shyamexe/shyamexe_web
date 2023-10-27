@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'config/routes/app_router.dart';
-import 'modules/home/home.dart';
+import 'config/theme/app_text_theme.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
-        canvasColor: const Color(0xff14141a)
+        canvasColor: const Color(0xff14141a),
+        textTheme: ApeTextTheme.theme()
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: Home.routeName,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      routerConfig: AppRouter().router,
     );
   }
 }

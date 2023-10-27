@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shyamexe/utils/layout_helper.dart';
 
 import '../../../widgets/hover_button.dart';
@@ -54,8 +55,7 @@ class NameBanner extends StatelessWidget {
                       
                       title: 'About',
                       onTap: () {
-                        Navigator.of(context)
-                            .pushNamed(About.routeName);
+                        context.push(About.routeName);
                       },
                     ),
                   ),

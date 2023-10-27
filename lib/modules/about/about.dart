@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shyamexe/utils/layout_helper.dart';
 import 'package:shyamexe/widgets/hover_button.dart';
 
@@ -42,7 +43,7 @@ class About extends StatelessWidget {
               HoverTextButton(
                 title: 'Back to main',
                 onTap: () {
-                  Navigator.pop(context);
+                  GoRouter.of(context).pop();
                 },
               ),
             const SizedBox(
