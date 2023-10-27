@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shyamexe/modules/about/about.dart';
 import 'package:shyamexe/widgets/hover_icon_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +23,7 @@ class HeaderWidet extends StatelessWidget {
             HoverTextButton(
               title: 'About',
               onTap: () {
-                Navigator.of(context).pushNamed(About.routeName);
+                context.push(About.routeName);
               },
             ),
           
