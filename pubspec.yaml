@@ -43,6 +43,7 @@ dependencies:
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+  flutter_launcher_icons:
   flutter_native_splash: null
   flutter_test:
     sdk: flutter
@@ -53,6 +54,12 @@ dev_dependencies:
 flutter_native_splash:
   color: "14141a"
   image: assets/171.gif
+flutter_launcher_icons:
+  web:
+    generate: true
+    image_path: "assets/favicon.png"
+    background_color: "#14141a"
+    theme_color: "#FFFFFF"
 flutter:
 
   # The following line ensures that the Material Icons font is

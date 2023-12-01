@@ -21,7 +21,7 @@ class WorksWidgets extends StatelessWidget {
             isLapTop: false,
             onTap: () {
               
-                context.push(
+                context.go(
                   Uri(path: WorkDetails.routeName,queryParameters:  WorkDetailsModel(
                     iconPath: 'assets/icons/playstore.png',
                     title: '"Easily Organize and Manage Your Files, Offline"',
@@ -54,7 +54,7 @@ class WorksWidgets extends StatelessWidget {
           isLapTop: false,
           onTap: () {
             
-                context.push(
+                context.go(
                   Uri(path:WorkDetails.routeName,queryParameters: WorkDetailsModel(
                     iconPath: 'assets/icons/githublogo.png',
                     title: '"Mason reusable bricks for efficient project scaffolding for Flutter."',
@@ -88,7 +88,7 @@ class WorksWidgets extends StatelessWidget {
         WorkTileWidget(
           onTap: () {
             
-                context.push(
+                context.go(
                   Uri(path:WorkDetails.routeName,queryParameters: WorkDetailsModel(
                     iconPath: 'assets/icons/pubdev.png',
                     title: '"This package provides a vertical scrollable tab bar widget"',
@@ -121,7 +121,7 @@ class WorksWidgets extends StatelessWidget {
         WorkTileWidget(
           onTap: () {
             
-                context.push(
+                context.go(
                   Uri(path:WorkDetails.routeName,queryParameters:  WorkDetailsModel(
                     iconPath: 'assets/icons/githublogo.png',
                     title: '"simple dictionary app in flutter using bloc patern"',
@@ -153,7 +153,7 @@ class WorksWidgets extends StatelessWidget {
         WorkTileWidget(
           onTap: () {
             
-                context.push(
+                context.go(
                   Uri(path:WorkDetails.routeName,queryParameters: WorkDetailsModel(
                     iconPath: 'assets/icons/web.png',
                     title: '"simple dictionary app in flutter using bloc patern"',
@@ -187,7 +187,7 @@ class WorksWidgets extends StatelessWidget {
         WorkTileWidget(
           onTap: ()  {
              
-                context.push(
+                context.go(
                   Uri(path:WorkDetails.routeName,queryParameters:  WorkDetailsModel(
                     iconPath: 'assets/icons/githublogo.png',
                     title: '"a simple weather app built with Flutter"',

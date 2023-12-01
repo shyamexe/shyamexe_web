@@ -43,7 +43,7 @@ class About extends StatelessWidget {
               HoverTextButton(
                 title: 'Back to main',
                 onTap: () {
-                  GoRouter.of(context).pop();
+                  context.go('/');
                 },
               ),
             const SizedBox(
