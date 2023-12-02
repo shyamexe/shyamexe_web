@@ -55,7 +55,7 @@ class NameBanner extends StatelessWidget {
                       
                       title: 'About',
                       onTap: () {
-                        context.push(About.routeName);
+                        context.go(About.routeName);
                       },
                     ),
                   ),
